@@ -1,10 +1,14 @@
-cmake_minimum_required(VERSION 3.9.6)
+cmake_minimum_required(VERSION 3.8)
 
 # ---------------------------------------------------------------------------- #
 # PROJECT
 # name version language
 # ---------------------------------------------------------------------------- #
-project(${project_name} LANGUAGES CXX)
+project(oc8051 VERSION 1.0 LANGUAGES CXX)
+
+
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -ggdb")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -ggdb")
 
 # ---------------------------------------------------------------------------- #
 # VARIABLE
@@ -22,15 +26,19 @@ set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 ##
 find_package(ilang REQUIRED)
 
+
 # ---------------------------------------------------------------------------- #
 # TARGET
 # executable
 # ---------------------------------------------------------------------------- #
-add_executable(${MyTarget} 
+add_executable(${MyTarget}
   app/main.cc
-  src/${source_file_name}
+  src/lib.cc
 )
+
+include_directories(/home/tmp/local/src/ILAng/include)
 
 target_include_directories(${MyTarget} PRIVATE include)
 
 target_link_libraries(${MyTarget} ilang::ilang)
+
