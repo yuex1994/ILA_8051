@@ -21,12 +21,6 @@ void add_input(InstrLvlAbsPtr src, InstrLvlAbsPtr dest) {
   }
 }
 
-void add_input(InstrLvlAbsPtr dest, CustExprSet& inputs) {
-  for (auto input : inputs) {
-    dest->AddInput(input);
-  }
-}
-
 void add_state(InstrLvlAbsPtr src, InstrLvlAbsPtr dest) {
   for (size_t i = 0; i != src->state_num(); i++) {
     if ((dest->find_state(src->state(i)->name()).get()) == nullptr)

@@ -3,10 +3,10 @@
 
 #include <ilang/ilang++.h>
 #include <iostream>
-#include <simple/lib.h>
 #include <ilang/util/log.h>
 #include <ilang/ila-mngr/v_eq_check_refinement.h>
 #include "z3++.h"
+#include <helper/lib.h>
 #include <ilang/ila/ast/expr.h>
 
 void AddIromInputPort(const InstrLvlAbsPtr &model_ptr)

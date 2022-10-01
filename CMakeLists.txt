@@ -36,7 +36,7 @@ add_executable(${MyTarget}
   src/lib.cc
 )
 
-include_directories(/home/tmp/local/src/ILAng/include)
+include_directories(/home/yuex/local/src/ILAng/include)
 
 target_include_directories(${MyTarget} PRIVATE include)
 
