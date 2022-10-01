@@ -1,4 +1,4 @@
-# ILA project template
+8051 micro-processor ILA Model
 
 To initialize the project with your customized name, run:
 
